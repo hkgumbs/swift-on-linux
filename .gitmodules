@@ -1,0 +1,3 @@
+[submodule "tictactoe-swift"]
+	path = tictactoe-swift
+	url = https://github.com/hkgumbs/tictactoe-swift.git
