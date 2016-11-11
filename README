@@ -1,0 +1,30 @@
+#!/usr/bin/env swift
+
+// -*- mode: swift -*-
+// vi: set ft=swift :
+
+
+/*
+ * # Resources to demonstrate the world of server-side Swift
+ *
+ *
+ * ### How it works?
+ *
+ * Requires Swift 3.0
+ *
+ * 1. git clone --recursive https://github.com/hkgumbs/swift-on-linux
+ * 2. cd swift-on-linix
+ * 2. ./README
+ *
+ */
+
+
+
+func section(header: String) -> String {
+    let line = String(repeating: "~", count: header.unicodeScalars.count + 2)
+    return "\n\n\n\n\(line)\n\n \(header) \n\n\(line)\n\n"
+}
+
+
+
+print(section(header: "Welcome!"))
