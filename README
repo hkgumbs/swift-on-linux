@@ -4,14 +4,6 @@
 // vi: set ft=swift :
 
 
-/*
- * Introductory demonstration of server-side Swift
- *
- * Swift 3.0
- *
- */
-
-
 
 func section(header: String, _ bullets: [String]) {
     let indent = "   "
