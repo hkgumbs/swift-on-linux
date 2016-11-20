@@ -5,26 +5,77 @@
 
 
 /*
- * # Resources to demonstrate the world of server-side Swift
+ * Introductory demonstration of server-side Swift
  *
- *
- * ### How it works?
- *
- * Requires Swift 3.0
- *
- * 1. git clone --recursive https://github.com/hkgumbs/swift-on-linux
- * 2. cd swift-on-linix
- * 2. ./README
+ * Swift 3.0
  *
  */
 
 
 
-func section(header: String) -> String {
-    let line = String(repeating: "~", count: header.unicodeScalars.count + 2)
-    return "\n\n\n\n\(line)\n\n \(header) \n\n\(line)\n\n"
+func section(header: String, _ bullets: [String]) {
+    let indent = "   "
+    let repeated = "~"
+    let length = header.unicodeScalars.count + 2 * indent.unicodeScalars.count
+    let border = String(repeating: repeated, count: length)
+
+    let prompt: (String) -> () = { print($0, terminator: ""); let _ = readLine() }
+
+    prompt("\n\n\n\n\(border)\n\n\(indent)\(header)\n\n\(border)\n\n")
+    bullets.forEach { prompt(" \($0) ") }
 }
 
 
 
-print(section(header: "Welcome!"))
+section(header: "Overview", [
+    "1. Scripts",
+    "2. Using the build toolchain",
+    "3. Interacting with native libraries",
+    "4. Building an actual server",
+])
+
+
+section(header: "Can I migrate all of my Ruby to Swift, today?", [
+    "¯\\_(ツ)_/¯",
+])
+
+
+section(header: "Replacing Ruby", [
+    "Easy",
+    "",
+    "> import Foundation",
+    "> String(contentsOfFile: \"my_file.txt\")",
+    "> fatal error: init(contentsOfFile:usedEncoding:) is not yet implemented: file Foundation/NSString.swift",
+    "",
+    "https://github.com/kylef/PathKit",
+    "",
+    "the simple stuff is alreay here",
+])
+
+
+section(header: "Replacing Bundler", [
+    "Any git repo",
+    "Swift PM + XCode == not recommended",
+    "",
+])
+
+
+section(header: "Replacing \"installing nokogiri with native extensions\"", [
+    "Swift-C interop",
+    "Rich desktop experiences",
+])
+
+
+section(header: "Replacing Rails", [
+    "SwiftOn",
+    "Perfect",
+    "Kitura",
+    "Vapor",
+])
+
+
+section(header: "In closing", [
+    "\"Can I migrate all of my Ruby to Swift, today?\"",
+    "",
+    "It depends!",
+])
